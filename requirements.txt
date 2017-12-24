@@ -5,3 +5,4 @@ psycopg2==2.7.3.2
 pytz==2017.3
 setuptools==38.2.4
 wheel==0.30.0
+pytest==3.3.1
