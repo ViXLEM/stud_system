@@ -1,0 +1,33 @@
+	{% extends 'base.html' %}
+
+    {% block body %}
+<div id="header-featured">
+<h2 class="banner_f">Student list from {{students_list.first.group.name}} group</h2>
+<table class="size_table_student">
+			<thead>
+				<tr>
+					<th>Surname</th>
+					<th>Name</th>
+					<th>Gradebook</th>
+					<th>Student card</th>
+					<th>Birthday date</th>
+					<th>Adress</th>
+					<th>Edit data</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%for i in students_list%}
+					<tr>
+					<td>{{i.student_person.surname}}</td>
+					<td>{{i.student_person.name}}</td>
+					<td>{{i.gradebook}}</td>
+					<td>{{i.student_card}}</td>
+					<td>{{i.student_person.birthday_date}}</td>
+					<td>{{i.student_person.adress}}</td>
+					<td><a class="a_table" href="/admin/students_system/student/{{i.gradebook}}/change/">Edit</a></td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+</div>
+	{% endblock %}

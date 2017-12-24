@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title></title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
+<link href="{% static 'css/default.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+</head>
+<body>
+<div id="header-wrapper" class="navbar">
+	<div id="header" class="container">
+		<div id="logo">
+			<h1><<a href="/">Student system</a>></h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li><a href="/" title="">Home</a></li>
+				<li><a href="/facultets_list/" title="">Faculties</a></li>
+				<li><a href="/admin/" title="">Admin</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+    {% block body %}
+
+<div id="header-featured">
+	<div id="banner-wrapper">
+		<div id="banner" class="container">
+			<h2>Student system</h2>
+			<p>This system uses for manage student data</p>
+			<a href="/facultets_list/" class="button">go to facultets list</a>
+		</div>
+	</div>
+</div>
+</div>
+
+	{% endblock %}
+
+<div id="copyright" class="container">
+	<p>&copy; Proected and developed by student IT-52 group Shutenko Victor</p>
+</div>
+</body>
+</html>

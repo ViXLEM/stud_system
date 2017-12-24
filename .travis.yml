@@ -1,0 +1,29 @@
+language: python
+python: 3.5.2
+
+matrix:
+  fast_finish: true
+
+
+dist: trusty
+sudo: required
+
+cache:
+  timeout: 43200 # 12 hours
+  pip: true
+
+services:
+  - postgresql
+
+before_script:
+  - export DJANGO_SETTINGS_MODULE=course_work.settings
+  - echo "ALTER USER postgres CREATEDB;" | psql -U postgres
+  - echo "CREATE DATABASE myproject;" | psql -U postgres
+
+install: pip install -r requirements.txt
+
+script:
+  - coverage run -m pytest
+  - coverage xml
+  - coverage report
+  - python-codacy-coverage -r coverage.xml

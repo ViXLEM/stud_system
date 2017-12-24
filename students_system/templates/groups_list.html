@@ -1,0 +1,29 @@
+	{% extends 'base.html' %}
+
+    {% block body %}
+<div id="header-featured">
+<h2 class="banner_f">Groups list from {{group_list.first.departament.facultet.name}} faculty</h2>
+<table class="size_table_student">
+			<thead>
+				<tr>
+					<th>Group name</th>
+					<th>Departament name</th>
+					<th>Speciality name</th>
+					<th>Education form</th>
+					<th>Go to student list</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%for i in group_list%}
+					<tr>
+					<td><a class="a_table" href="/admin/students_system/group/{{i.name}}/change/" title="Edit group data">{{i.name}}</a></td>
+					<td>{{i.departament.name}}</td>
+					<td>{{i.speciality.name}}</td>
+					<td>{{i.form_of_education}}</td>
+					<td><a class="a_table" href="/group/{{i.name}}">Go to student list</a></td>
+				</tr>
+				{%endfor%}
+			</tbody>
+		</table>
+</div>
+	{% endblock %}

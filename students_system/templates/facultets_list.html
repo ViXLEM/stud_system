@@ -1,0 +1,24 @@
+	{% extends 'base.html' %}
+
+    {% block body %}
+<div id="header-featured">
+<h2 class="banner_f">Faculties table</h2>
+<table>
+			<thead>
+				<tr>
+					<th>Faculty</th>
+					<th>Groups</th>
+				</tr>
+			</thead>
+			<tbody>
+				{%for i in fc_list%}
+					<tr>
+					<td><a class="a_table" href="/admin/students_system/facultet/{{i.name}}/change/" title="Edit facultet data">{{i.name}}</a></td>
+					<td><a class="a_table" href="/facultet/{{i.name}}">Go to groups list</a></td>
+				</tr>
+				{%endfor%}
+
+			</tbody>
+		</table>
+</div>
+	{% endblock %}
