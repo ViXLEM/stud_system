@@ -1,7 +1,7 @@
 import pytest
 
-# import os
-# os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'course_work.settings')
+import os
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'course_work.settings')
 
 
 from model_mommy import mommy
